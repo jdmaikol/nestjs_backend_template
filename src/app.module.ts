@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: Boolean(process.env.TYPEORM_AUTOLOADENTITIES),
       ssl: Boolean(process.env.TYPEORM_SSL),
     }),
+    AuthModule,
   ],
   controllers: [],
   providers: [],
