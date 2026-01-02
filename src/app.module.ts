@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SeedModule } from './seed/seed.module';
 
 @Module({
   imports: [
@@ -18,7 +17,6 @@ import { SeedModule } from './seed/seed.module';
       autoLoadEntities: Boolean(process.env.TYPEORM_AUTOLOADENTITIES),
       ssl: Boolean(process.env.TYPEORM_SSL),
     }),
-    SeedModule,
   ],
   controllers: [],
   providers: [],
